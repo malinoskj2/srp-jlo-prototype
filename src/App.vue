@@ -1,5 +1,6 @@
 <template>
   <va-app id="app"
+          :topbar-priority="topbar.priority"
          desktop-topbar-height="64"
          mobile-topbar-height="64"
          bgColor="#FFFFFF">
@@ -46,7 +47,10 @@
         navLinksRight: [
           {text: "Give an exam", route: "/TODO"},
           {text: "Log in", route: "/TODO"}
-        ]
+        ],
+        topbar: {
+          priority: true
+        }
       }
     },
     components: {
