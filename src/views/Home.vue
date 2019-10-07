@@ -1,18 +1,26 @@
 <template>
-    <va-page>
+
       <div id="home">
-        <div class="top-section">
-          <h1>{{topSection.primaryText}}</h1>
-          <h2>{{topSection.secondaryText}}</h2>
-          <va-button string="primary" size="lg" id="signup">
-            <div>Get Started</div>
-          </va-button>
-        </div>
-        <div class="top-section">
-          <img src="@/assets/charts_a.svg" width="500" height="500">
-        </div>
+
+          <div id="section-a">
+              <div class="top-section">
+                  <h1>{{topSection.primaryText}}</h1>
+                  <h2>{{topSection.secondaryText}}</h2>
+                  <va-button string="primary" size="lg" id="signup">
+                      <div>Get Started</div>
+                  </va-button>
+              </div>
+              <div class="top-section">
+                  <img src="@/assets/charts_a.svg" width="500" height="500">
+              </div>
+          </div>
+
+          <div id="section-b">
+
+          </div>
+
       </div>
-    </va-page>
+
 </template>
 
 <script>
@@ -30,8 +38,8 @@ export default {
 }
 </script>
 <style scoped>
-#home {
-    padding-top: 4rem;
+#section-a {
+    padding: 8rem 0 6rem 0;
     display:flex;
     flex-direction: row;
     justify-content: center;
@@ -58,6 +66,11 @@ h2 {
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+}
+
+#section-b {
+    min-height: 200px;
+  background-color: #F5F4F2;
 }
 
 </style>

@@ -1,6 +1,7 @@
 <template>
   <va-app id="app"
           :topbar-priority="topbar.priority"
+          desktop-margin="0"
          desktop-topbar-height="64"
          mobile-topbar-height="64"
          bgColor="#FFFFFF">
@@ -84,6 +85,7 @@
   flex-wrap: nowrap;
 
   padding-right: .5rem;
+  margin-right: 1rem;
 }
 
 #brand {
