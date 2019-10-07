@@ -1,10 +1,7 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-    </div>
+  <VaApp id="app">
     <router-view/>
-  </div>
+  </VaApp>
 </template>
 
 <style>
@@ -24,3 +21,8 @@
 }
 
 </style>
+<script>
+  export default {
+
+  }
+</script>

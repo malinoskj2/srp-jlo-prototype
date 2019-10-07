@@ -4,10 +4,10 @@ import router from './router'
 import store from './store'
 
 // Vue Atlas
-import Va from 'vue-atlas'
+import { VaApp } from 'vue-atlas/src/App'
 import 'vue-atlas/dist/vue-atlas.css'
 
-Vue.use(Va, 'en')
+Vue.use(VaApp)
 
 Vue.config.productionTip = false
 
