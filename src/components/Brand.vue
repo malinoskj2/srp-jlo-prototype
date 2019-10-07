@@ -37,7 +37,7 @@
         font-weight: bold;
         color: #000000;
         font-family: 'Karla', sans-serif;
-        padding: 0 .2rem 0 .5rem;
+        padding: 0 .2rem 0 0rem;
     }
 
     #delimiter {

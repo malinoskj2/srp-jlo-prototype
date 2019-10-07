@@ -1,29 +1,52 @@
 <template>
-  <VaApp id="app"
+  <va-app id="app"
          desktop-topbar-height="64"
          mobile-topbar-height="64"
          bgColor="#FFFFFF">
 
-    <VaTopbar theme="white" class="nav">
+    <va-topbar theme="white" id="nav">
+
       <template v-slot:left>
-        <Brand name="JLO Test" delimiter="●"/>
+        <div>
+          <brand name="JLO Test" delimiter="●" id="brand"/>
+          <nav-text-list :links="navLinksLeft"/>
+        </div>
       </template>
-    </VaTopbar>
+
+      <template v-slot:right>
+        <div id="nav-right">
+          <nav-text-list :links="navLinksRight"/>
+          <va-button string="primary" size="md" id="signup">
+            <div>Sign Up</div>
+          </va-button>
+        </div>
+      </template>
+
+    </va-topbar>
 
     <router-view/>
 
-  </VaApp>
+  </va-app>
 </template>
 <script>
   import Brand from '@/components/Brand.vue';
+  import NavTextList from '@/components/NavTextList.vue';
 
   export default {
     data() {
       return {
+        navLinksLeft: [
+          {text: "Features" , route: "/TODO" },
+          {text: "How Does it Work", route: "/TODO" },
+        ],
+        navLinksRight: [
+          {text: "Give an exam", route: "/TODO"},
+          {text: "Log in", route: "/TODO"}
+        ]
       }
     },
     components: {
-      Brand
+      Brand, NavTextList
     }
   }
 </script>
@@ -42,8 +65,26 @@
   padding: 0;
   border: 0;
 }
-.nav {
+
+#nav {
   border-bottom: .25px solid #e5e3dd;
+}
+
+#nav-right {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+
+  padding-right: .5rem;
+}
+
+#brand {
+    padding: 0rem 2rem 0rem .5rem;
+}
+
+#signup {
+  color: #FFFFFF;
+  background-color: #E85B46;
 }
 
 </style>
