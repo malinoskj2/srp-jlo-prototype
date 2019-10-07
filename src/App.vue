@@ -15,6 +15,10 @@
 
       <template v-slot:right>
         <div id="nav-right">
+          <va-icon size="1rem"
+                   bg-color="transparent"
+                   padding=".5rem"
+                   type="search"/>
           <nav-text-list :links="navLinksRight"/>
           <va-button string="primary" size="md" id="signup">
             <div>Sign Up</div>
