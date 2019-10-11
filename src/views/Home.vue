@@ -2,9 +2,9 @@
 
     <div id="home">
 
-        <div id="section-a">
+        <div id="section-a" class="flex-row-center">
             <div class="top-section">
-                <h1>{{topSection.primaryText}}</h1>
+                <h1 class="black-karla">{{topSection.primaryText}}</h1>
                 <h2>{{topSection.secondaryText}}</h2>
                 <va-button string="primary" size="lg" id="signup">
                     <div>Get Started</div>
@@ -16,6 +16,14 @@
         </div>
 
         <div id="section-b">
+
+            <div id="section-b-text" class="flex-column">
+                    <div id="section-b-primary" class="flex-row-center black-karla">{{features.primaryText}} </div>
+                    <div class="flex-row-center" >
+                        <div id="section-b-secondary" >{{features.secondaryText}}</div>
+                    </div>
+            </div>
+
             <div id="features">
 
                 <div/>
@@ -45,6 +53,9 @@
                     secondaryText: "Easily administer the JLO test and derive deep, statistical insights from the results",
                 },
                 features: {
+                    primaryText: "Why?",
+                    secondaryText: "JLO test provides all the functionality of the traditional JLO test" +
+                        ", enhanced with multiple latent data points.",
                     imageWidth: 200,
                     imageHeight: 200,
                     items: [
@@ -73,19 +84,35 @@
     }
 </script>
 <style scoped>
-    #section-a {
-        padding: 8rem 0 6rem 0;
+    .flex-row-center {
         display: flex;
         flex-direction: row;
         justify-content: center;
     }
 
-    h1 {
+    .black-karla {
         color: black;
+        font-family: 'Karla', sans-serif;
+    }
+
+    .flex-column {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .flex-column > * {
+        padding: 0 0 2rem 0;
+
+    }
+
+    #section-a {
+        padding: 8rem 0 6rem 0;
+    }
+
+    h1 {
         line-height: 4rem;
         font-size: 4rem;
         word-wrap: break-word;
-        font-family: 'Karla', sans-serif;
         padding-bottom: 1rem;
     }
 
@@ -93,6 +120,21 @@
         color: rgba(0, 0, 0, .8);
         padding-bottom: 1rem;
         max-width: 80%;
+    }
+
+    #section-b-text {
+        margin: 0rem 0rem 5rem 0rem;
+    }
+
+    #section-b-primary {
+        font-size: 3rem;
+    }
+
+    #section-b-secondary {
+        font-family: 'Arial', sans-serif;
+        font-size: 1rem;
+        text-align: center;
+        max-width: 30%;
     }
 
     .top-section {
@@ -104,6 +146,7 @@
     }
 
     #section-b {
+        padding: 5rem 0 5rem 0;
         min-height: 200px;
         background-color: #F5F4F2;
     }
