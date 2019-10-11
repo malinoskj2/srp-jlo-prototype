@@ -17,10 +17,12 @@
 
         <div id="section-b">
 
-            <div id="section-b-text" class="flex-column">
-                    <div id="section-b-primary" class="flex-row-center black-karla">{{features.primaryText}} </div>
+            <div class="flex-column section-text">
+                    <div class="flex-row-center black-karla section-primary">
+                        {{features.primaryText}}
+                    </div>
                     <div class="flex-row-center" >
-                        <div id="section-b-secondary" >{{features.secondaryText}}</div>
+                        <div class="section-secondary" >{{features.secondaryText}}</div>
                     </div>
             </div>
 
@@ -37,12 +39,36 @@
             </div>
         </div>
 
+        <div id="section-c">
+            <div class="flex-column section-text">
+                <div class="flex-row-center black-karla section-primary">
+                    {{steps.primaryText}}
+                </div>
+                <div class="flex-row-center" >
+                    <div class="section-secondary" >{{steps.secondaryText}}</div>
+                </div>
+            </div>
+
+            <div id="steps">
+                <div/>
+                <step v-for="(item, index) in steps.items" :key="index"
+                        :title="item.title"
+                        :description="item.description">
+                    <img :src="item.src">
+                </step>
+                <div/>
+
+            </div>
+
+        </div>
+
     </div>
 
 </template>
 
 <script>
     import Feature from '@/components/Feature.vue'
+    import Step from '@/components/Step.vue'
 
     export default {
         name: 'home',
@@ -62,24 +88,49 @@
                         {
                             title: "Audio Transcription",
                             description: "Cloud powered audio transcription, for convenient test administration",
-                            src: require('@/assets/speech.svg')
+                            src: require('@/assets/features/speech.svg')
                         },
                         {
                             title: "Data Export",
                             description: "Export data for analysis",
-                            src: require('@/assets/data_export.svg')
+                            src: require('@/assets/features/data_export.svg')
                         },
                         {
                             title: "Enhanced Test Results",
                             description: "Enhanced insight through latent data points",
-                            src: require('@/assets/enhanced.svg')
+                            src: require('@/assets/features/enhanced.svg')
+                        },
+                    ]
+                },
+                steps: {
+                    primaryText: "How it works",
+                    secondaryText: "JLO test makes administering tests a breeze. Get up and running in minutes.",
+                    imageWidth:500,
+                    imageHeight: 500,
+                    items: [
+                        {
+                            title: "Register An Account.",
+                            description: "An account allows you to administer tests and access test results.",
+                            src: require('@/assets/steps/signup.svg')
+                        },
+                        {
+                            title: "Administer a Test.",
+                            description: "Our JLO test provides all the data of traditional tests, " +
+                                "but is enhanced by latent data." ,
+                            src: require('@/assets/steps/jolo.svg')
+                        },
+                        {
+                            title: "Review the Results.",
+                            description: "Results can easily be exported for further analysis",
+                            src: require('@/assets/steps/results.svg')
                         },
                     ]
                 }
             }
         },
         components: {
-            Feature
+            Feature,
+            Step
         }
     }
 </script>
@@ -122,15 +173,15 @@
         max-width: 80%;
     }
 
-    #section-b-text {
+    .section-text {
         margin: 0rem 0rem 5rem 0rem;
     }
 
-    #section-b-primary {
+    .section-primary {
         font-size: 3rem;
     }
 
-    #section-b-secondary {
+    .section-secondary {
         font-family: 'Arial', sans-serif;
         font-size: 1rem;
         text-align: center;
@@ -154,6 +205,12 @@
     #features {
         display: grid;
         grid-template-columns: .5fr 1fr 1fr 1fr .5fr;
+    }
+
+    #section-c {
+        padding: 5rem 0 5rem 0;
+        min-height: 200px;
+        background-color: #FFFFFF;
     }
 
 </style>

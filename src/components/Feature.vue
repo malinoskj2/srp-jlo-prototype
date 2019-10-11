@@ -1,7 +1,7 @@
 <template>
     <div id="feature">
         <div id="feature-image">
-            <slot></slot>
+            <slot/>
         </div>
         <div id="title">{{title}}</div>
         <div id="description">{{description}}</div>
@@ -43,6 +43,7 @@
 
         padding-bottom: .5rem;
     }
+
     #description {
         text-align: center;
         color: black;
