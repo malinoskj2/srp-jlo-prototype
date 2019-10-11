@@ -17,20 +17,15 @@
 
         <div id="section-b">
             <div id="features">
+
                 <div/>
-                <feature title="Audio Transcription"
-                         description="Cloud powered audio transcription, for convenient test administration">
-                    <img src="@/assets/speech.svg" width="200" height="200">
+                <feature v-for="(item, index) in features.items" :key="index"
+                         :title="item.title"
+                         :description="item.description">
+                    <img :src="item.src" :width="features.imageWidth" :height="features.imageHeight">
                 </feature>
-                <feature title="Data Export"
-                         description="Export data for analysis">
-                    <img src="@/assets/data_export.svg" width="200" height="200">
-                </feature>
-                <feature title="Enhanced Test Results"
-                         description="Enhanced insight through latent data points">
-                    <img src="@/assets/enhanced.svg" width="200" height="200">
-                    <div/>
-                </feature>
+                <div/>
+
             </div>
         </div>
 
@@ -49,6 +44,27 @@
                     primaryText: "Harness the data within.",
                     secondaryText: "Easily administer the JLO test and derive deep, statistical insights from the results",
                 },
+                features: {
+                    imageWidth: 200,
+                    imageHeight: 200,
+                    items: [
+                        {
+                            title: "Audio Transcription",
+                            description: "Cloud powered audio transcription, for convenient test administration",
+                            src: require('@/assets/speech.svg')
+                        },
+                        {
+                            title: "Data Export",
+                            description: "Export data for analysis",
+                            src: require('@/assets/data_export.svg')
+                        },
+                        {
+                            title: "Enhanced Test Results",
+                            description: "Enhanced insight through latent data points",
+                            src: require('@/assets/enhanced.svg')
+                        },
+                    ]
+                }
             }
         },
         components: {
