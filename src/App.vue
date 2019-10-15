@@ -10,7 +10,9 @@
 
       <template v-slot:left>
         <div>
-          <brand name="JLO Test" delimiter="●" id="brand"/>
+          <router-link to="/" class="router-link">
+            <brand name="JLO Test" delimiter="●" id="brand"/>
+          </router-link>
           <nav-text-list :links="navLinksLeft"/>
         </div>
       </template>
@@ -46,7 +48,7 @@
           {text: "How Does it Work", route: "/TODO" },
         ],
         navLinksRight: [
-          {text: "Give an exam", route: "/TODO"},
+          {text: "Give an exam", route: "/exam"},
           {text: "Log in", route: "/TODO"}
         ],
         topbar: {
@@ -95,6 +97,12 @@
 #signup {
   color: #FFFFFF;
   background-color: #E85B46;
+}
+
+.router-link {
+  color: inherit;
+  text-decoration: inherit;
+  outline: none;
 }
 
 </style>

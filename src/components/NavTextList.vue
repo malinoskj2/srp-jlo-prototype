@@ -1,7 +1,9 @@
 <template>
     <div id="NavTextList">
         <div v-for="(link, index) in links" :key="index" class="link">
-            {{link.text}}
+            <router-link :to="link.route" class="router-link">
+                    <div>{{link.text}}</div>
+            </router-link>
         </div>
     </div>
 </template>
